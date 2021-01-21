@@ -7,4 +7,4 @@ client  = commands.Bot(command_prefix = "!")
 async def on_ready():
     print("Bot online.")
 
-client.run("ODAxODcwNDgwNjYyNTkzNTk3.YAm-FA.OH28Ishz_VT7I_fAJql69qCsD9M")
+client.run("ODAxODcwNDgwNjYyNTkzNTk3.YAm-FA.HKdYLtTkla4R5GYABNfhK5IGZO0")
