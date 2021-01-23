@@ -13,7 +13,7 @@ import os
 dir_path = os.path.dirname(os.path.realpath(__file__))
 gc = gspread.service_account(filename= f"{dir_path}/creds.json")
 
-sh = gc.open("Test Spreadsheet")
+sh = gc.open("Executive Assistant Backend")
 delegateData = sh.worksheet("delegateData")
 
 class AutoVerify(commands.Cog):
