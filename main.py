@@ -10,7 +10,8 @@ from datetime import datetime
 commandPrefix = ("!")
 client  = commands.Bot(command_prefix = commandPrefix, case_insensitive= True)
 status = cycle(["for '!help'", "over the MUN server.", "little delegates play around."])
-botName = "botName placeholder"
+botName = "The Executive Assistant"
+dir_path = os.path.dirname(os.path.realpath(__file__))
 
 #Actual code starts here:
 
@@ -135,8 +136,6 @@ async def on_command_error(ctx, error):
 async def on_ready():
     change_status.start()
     print("main operational.")
-
-dir_path = os.path.dirname(os.path.realpath(__file__))
 
 for filename in os.listdir(f"{dir_path}/extensionFolder"):
     if filename.endswith(".py"):
