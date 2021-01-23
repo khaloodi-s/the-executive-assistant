@@ -134,7 +134,7 @@ async def on_command_error(ctx, error):
 @client.event
 async def on_ready():
     change_status.start()
-    print("betaMain operational.")
+    print("main operational.")
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
