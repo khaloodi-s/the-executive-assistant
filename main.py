@@ -9,7 +9,7 @@ from datetime import datetime
 #All configurations used within this file are listed here:
 commandPrefix = ("!")
 client  = commands.Bot(command_prefix = commandPrefix, case_insensitive= True)
-status = cycle(["for '!help'", "over the MUN server.", "little delegates play around."])
+status = cycle(["for '!help'", "over the MUN server."])
 botName = "The Executive Assistant"
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
