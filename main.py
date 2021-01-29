@@ -141,4 +141,4 @@ for filename in os.listdir(f"{dir_path}/extensionFolder"):
     if filename.endswith(".py"):
         client.load_extension(f"extensionFolder.{filename[:-3]}")
 
-client.run("ODAxODcwNDgwNjYyNTkzNTk3.YAm-FA.SEGJw_6LSiejarqQ0q4HIQhBlH0")
+client.run(os.environ.get("BOT_TOKEN"))

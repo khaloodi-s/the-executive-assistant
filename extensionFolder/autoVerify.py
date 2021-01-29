@@ -111,7 +111,7 @@ class AutoVerify(commands.Cog):
                 await confirmationPrompt.clear_reactions()
                 if positiveConfirmation:
                     await confirmationPrompt.edit(embed= positiveFinalEmbed)
-                    time.sleep(10)
+                    await asyncio.sleep(10)
                     await ctx.author.edit(nick= userNick, roles= [userRole])
                 elif negativeConfirmation:
                     await confirmationPrompt.edit(embed= negativeFinalEmbed)
