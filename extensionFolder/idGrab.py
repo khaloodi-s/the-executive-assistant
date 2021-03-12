@@ -44,7 +44,7 @@ class IDGrab(commands.Cog):
             if "Delegate" in memeberTopRoleNames:
                 for a in range(0, len(memeberTopRoleNames)):
                     if memeberTopRoleNames[a].isdigit():
-                        classNum = int(i)
+                        classNum = int(a)
             else:
                 classNum = "X"
 
