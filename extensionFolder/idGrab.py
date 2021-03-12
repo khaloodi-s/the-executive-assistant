@@ -51,7 +51,7 @@ class IDGrab(commands.Cog):
                 classNum = "X"
 
             wsh.update_cell(i+3, 6, str(classNum))
-            asyncio.sleep(3.1)
+            await asyncio.sleep(3.1)
 
         await ctx.send("Compilation complete.")
 
