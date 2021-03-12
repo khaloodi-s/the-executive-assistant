@@ -32,6 +32,8 @@ class IDGrab(commands.Cog):
         
         guildMemberList = ctx.guild.members
 
+        print(guildMemberList)
+
         for i in range(0, len(guildMemberList)):
             wsh.update_cell(i+3, 2, str(guildMemberList[i].id))
             wsh.update_cell(i+3, 3, guildMemberList[i].name)
@@ -44,7 +46,7 @@ class IDGrab(commands.Cog):
             if "Delegate" in memeberTopRoleNames:
                 for a in range(0, len(memeberTopRoleNames)):
                     if memeberTopRoleNames[a].isdigit():
-                        classNum = int(a)
+                        classNum = int(memeberTopRoleNames[a])
             else:
                 classNum = "X"
 
