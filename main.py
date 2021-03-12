@@ -12,8 +12,10 @@ from discord.ext.commands import has_guild_permissions
 from oauth2client.service_account import ServiceAccountCredentials
 
 #All configurations used within this file are listed here:
+intents = discord.Intents.default()
+intents.members = True
 commandPrefix = ("!")
-client  = commands.Bot(command_prefix = commandPrefix, case_insensitive= True)
+client  = commands.Bot(command_prefix = commandPrefix, case_insensitive= True, intents= intents)
 status = cycle(["for '!help'", "over the MUN server."])
 botName = "The Executive Assistant"
 dir_path = os.path.dirname(os.path.realpath(__file__))
