@@ -171,7 +171,7 @@ async def on_command_error(ctx, error):
         generalError.set_footer(text= f"Requested by {ctx.message.author}", icon_url= ctx.message.author.avatar_url)
         await ctx.send(embed= generalError)
 
-@tasks.loop(seconds=30)
+@tasks.loop(seconds=60)
 async def registration_toggle():
 
     triggerBoolCell = registerBackend.cell(10, 6)
@@ -180,7 +180,7 @@ async def registration_toggle():
     registerModuleEnabledBool = bool(registerModuleEnabledBoolCell.value == "TRUE")
     registerUserEnabledBoolCell = registerBackend.cell(12, 6)
     registerUserEnabledBool = bool(registerUserEnabledBoolCell.value == "TRUE")
-
+    
     registration1 = client.get_channel(807356010099769404)
     registration2 = client.get_channel(807356094351409214)
     registration3 = client.get_channel(807356191323455518)
