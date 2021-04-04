@@ -11,6 +11,8 @@ from discord.ext.commands import is_owner
 import asyncio
 import os
 
+#hi lol
+
 dir_path = os.path.dirname(os.path.realpath(__file__))
 gc = gspread.service_account(filename= f"{dir_path}/creds.json")
 sh = gc.open("Executive Assistant Backend")

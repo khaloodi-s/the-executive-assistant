@@ -11,6 +11,8 @@ from discord.ext.commands import has_role
 from discord.ext.commands import has_guild_permissions
 from oauth2client.service_account import ServiceAccountCredentials
 
+#hi lol
+
 #All configurations used within this file are listed here:
 intents = discord.Intents.default()
 intents.members = True
