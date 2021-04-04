@@ -187,11 +187,12 @@ async def registration_toggle():
     registration4 = client.get_channel(807356327457194027)
     registration5 = client.get_channel(807356553933488199)
     registration6 = client.get_channel(807356728848154664)
-    registration7 = client.get_channel(807357006755135548)
-    registration8 = client.get_channel(807357166435434516)
-    registration9 = client.get_channel(807357262007369759)
+    registration7 = client.get_channel(824732506355007509)
+    registration8 = client.get_channel(807357006755135548)
+    registration9 = client.get_channel(807357166435434516)
+    registration10 = client.get_channel(807357262007369759)
 
-    registrationTCList = [registration1, registration2, registration3, registration4, registration5, registration6, registration7, registration8, registration9]
+    registrationTCList = [registration1, registration2, registration3, registration4, registration5, registration6, registration7, registration8, registration9, registration10]
 
     onAnnounceEmbed = discord.Embed(
         title= "Registration Module has Been Loaded!",

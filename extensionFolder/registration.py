@@ -23,6 +23,7 @@ registerClass6Sheet = sh.worksheet("registerClass6")
 registerClass7Sheet = sh.worksheet("registerClass7")
 registerClass8Sheet = sh.worksheet("registerClass8")
 registerClass9Sheet = sh.worksheet("registerClass9")
+registerClass10Sheet = sh.worksheet("registerClass10")
 registerBackend = sh.worksheet("registerBackend")
 weekNum = int(registerBackend.cell(5, 3).value)
 
@@ -39,11 +40,12 @@ class Registration(commands.Cog):
         self.class7IDs = registerClass7Sheet.col_values(2)
         self.class8IDs = registerClass8Sheet.col_values(2)
         self.class9IDs = registerClass9Sheet.col_values(2)
+        self.class10IDs = registerClass10Sheet.col_values(2)
         print("registration operational.")
 
 
     @commands.command()
-    @is_owner()
+    @has_any_role("Trainers", "Administrators")
     async def refreshDB(self, ctx):
         self.class1IDs = registerClass1Sheet.col_values(2)
         self.class2IDs = registerClass2Sheet.col_values(2)
@@ -54,6 +56,7 @@ class Registration(commands.Cog):
         self.class7IDs = registerClass7Sheet.col_values(2)
         self.class8IDs = registerClass8Sheet.col_values(2)
         self.class9IDs = registerClass9Sheet.col_values(2)
+        self.class10IDs = registerClass10Sheet.col_values(2)
         await ctx.send("Local database updated.")
 
 
@@ -63,43 +66,47 @@ class Registration(commands.Cog):
         memberID = str(member.id)
         khaledUser = "<@187181902011170816>"
 
-        delegateClass1Role = discord.utils.get(serverGuild.roles, name= "Arab League")
-        delegateClass1VC = discord.utils.get(serverGuild.voice_channels, name= "Arab League")
-        registration1TC = discord.utils.get(serverGuild.text_channels, name= "arab-league-registration-1")
+        delegateClass1Role = discord.utils.get(serverGuild.roles, name= "[1] AUF")
+        delegateClass1VC = discord.utils.get(serverGuild.voice_channels, name= "1 AUF")
+        registration1TC = discord.utils.get(serverGuild.text_channels, name= "1-registration")
 
-        delegateClass2Role = discord.utils.get(serverGuild.roles, name= "CIA")
-        delegateClass2VC = discord.utils.get(serverGuild.voice_channels, name= "CIA")
-        registration2TC = discord.utils.get(serverGuild.text_channels, name= "cia-registration-2")
+        delegateClass2Role = discord.utils.get(serverGuild.roles, name= "[2] CIA")
+        delegateClass2VC = discord.utils.get(serverGuild.voice_channels, name= "2 CIA")
+        registration2TC = discord.utils.get(serverGuild.text_channels, name= "2-registration")
 
-        delegateClass3Role = discord.utils.get(serverGuild.roles, name= "Security Council")
-        delegateClass3VC = discord.utils.get(serverGuild.voice_channels, name= "Security Council")
-        registration3TC = discord.utils.get(serverGuild.text_channels, name= "security-council-registration-3")
+        delegateClass3Role = discord.utils.get(serverGuild.roles, name= "[3] Security Council")
+        delegateClass3VC = discord.utils.get(serverGuild.voice_channels, name= "3 Security Council")
+        registration3TC = discord.utils.get(serverGuild.text_channels, name= "3-registration")
 
-        delegateClass4Role = discord.utils.get(serverGuild.roles, name= "Delegate Class 4")
-        delegateClass4VC = discord.utils.get(serverGuild.voice_channels, name= "Delegate Class 4")
-        registration4TC = discord.utils.get(serverGuild.text_channels, name= "registration-4")
+        delegateClass4Role = discord.utils.get(serverGuild.roles, name= "[4] Security Council")
+        delegateClass4VC = discord.utils.get(serverGuild.voice_channels, name= "4 Security Council")
+        registration4TC = discord.utils.get(serverGuild.text_channels, name= "4-registration")
 
-        delegateClass5Role = discord.utils.get(serverGuild.roles, name= "Delegate Class 5")
-        delegateClass5VC = discord.utils.get(serverGuild.voice_channels, name= "Delegate Class 5")
-        registration5TC = discord.utils.get(serverGuild.text_channels, name= "registration-5")
+        delegateClass5Role = discord.utils.get(serverGuild.roles, name= "[5] Arab League")
+        delegateClass5VC = discord.utils.get(serverGuild.voice_channels, name= "5 Arab League")
+        registration5TC = discord.utils.get(serverGuild.text_channels, name= "5-registration")
 
-        delegateClass6Role = discord.utils.get(serverGuild.roles, name= "Delegate Class 6")
-        delegateClass6VC = discord.utils.get(serverGuild.voice_channels, name= "Delegate Class 6")
-        registration6TC = discord.utils.get(serverGuild.text_channels, name= "registration-6")
+        delegateClass6Role = discord.utils.get(serverGuild.roles, name= "[6] Territorial Disputes")
+        delegateClass6VC = discord.utils.get(serverGuild.voice_channels, name= "6 Territorial Disputes")
+        registration6TC = discord.utils.get(serverGuild.text_channels, name= "6-registration")
 
-        delegateClass7Role = discord.utils.get(serverGuild.roles, name= "Delegate Class 7")
-        delegateClass7VC = discord.utils.get(serverGuild.voice_channels, name= "Delegate Class 7")
-        registration7TC = discord.utils.get(serverGuild.text_channels, name= "registration-7")
+        delegateClass7Role = discord.utils.get(serverGuild.roles, name= "[7] Human Rights")
+        delegateClass7VC = discord.utils.get(serverGuild.voice_channels, name= "7 Human Rights")
+        registration7TC = discord.utils.get(serverGuild.text_channels, name= "7-registration")
 
-        delegateClass8Role = discord.utils.get(serverGuild.roles, name= "Delegate Class 8")
-        delegateClass8VC = discord.utils.get(serverGuild.voice_channels, name= "Delegate Class 8")
-        registration8TC = discord.utils.get(serverGuild.text_channels, name= "registration-8")
+        delegateClass8Role = discord.utils.get(serverGuild.roles, name= "[8] General Assembly")
+        delegateClass8VC = discord.utils.get(serverGuild.voice_channels, name= "8 General Assembly")
+        registration8TC = discord.utils.get(serverGuild.text_channels, name= "8-registration")
 
-        delegateClass9Role = discord.utils.get(serverGuild.roles, name= "Delegate Class 9")
-        delegateClass9VC = discord.utils.get(serverGuild.voice_channels, name= "Delegate Class 9")
-        registration9TC = discord.utils.get(serverGuild.text_channels, name= "registration-9")
+        delegateClass9Role = discord.utils.get(serverGuild.roles, name= "[9] Arab League")
+        delegateClass9VC = discord.utils.get(serverGuild.voice_channels, name= "9 Arab League")
+        registration9TC = discord.utils.get(serverGuild.text_channels, name= "9-registration")
 
-        otherVCList = [discord.utils.get(serverGuild.voice_channels, name= "Plenary Class"), discord.utils.get(serverGuild.voice_channels, name= "Assembly Room")]
+        delegateClass10Role = discord.utils.get(serverGuild.roles, name= "[10] Human Rights")
+        delegateClass10VC = discord.utils.get(serverGuild.voice_channels, name= "10 Human Rights")
+        registration10TC = discord.utils.get(serverGuild.text_channels, name= "10-registration")
+
+        otherVCList = [discord.utils.get(serverGuild.voice_channels, name= "General Assembly"), discord.utils.get(serverGuild.voice_channels, name= "Assembly Room")]
 
         presentConfirmationEmbed = discord.Embed(
             title= "Registration Successful!",
@@ -206,6 +213,16 @@ class Registration(commands.Cog):
                 if str(registerClass9Sheet.cell(rowNum, (4 + weekNum)).value) == "FALSE":
                     registerClass9Sheet.update_cell(rowNum, (4 + weekNum), "TRUE")
                     await registration9TC.send(embed= presentConfirmationEmbed)
+
+        elif (delegateClass10Role in member.roles) and ((after.channel == delegateClass10VC) or (after.channel in otherVCList)):
+            try:
+                rowNum = self.class10IDs.index(memberID) + 1
+            except ValueError:
+                await registration10TC.send(embed= userNotFoundEmbed)
+            else:
+                if str(registerClass10Sheet.cell(rowNum, (4 + weekNum)).value) == "FALSE":
+                    registerClass10Sheet.update_cell(rowNum, (4 + weekNum), "TRUE")
+                    await registration10TC.send(embed= presentConfirmationEmbed)
 
                     
 def setup(client):
