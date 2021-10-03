@@ -1,5 +1,6 @@
 "# the-executive-assistant" 
 
-This is a discord bot used to manage many administrative procedures involved with running the MUN program in the New English School in Kuwait.
+This was a discord bot used to manage many administrative procedures involved with running the MUN program in the New English School in Kuwait.
 
-New features are consistently in development, and support is active for this project. 
+As of 10 June 2021, support for this project has ended and development has been halted.
+This project will be rebooted again in the near future.
